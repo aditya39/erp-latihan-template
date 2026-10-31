@@ -33,6 +33,6 @@ class ErpLatihanApplicationTests {
         // jadi perubahannya harus disengaja dan diberitahukan.
         mvc.perform(get("/v3/api-docs"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.openapi").value("3.1.0"));
+                .andExpect(jsonPath("$.openapi").value("3.0.1"));
     }
 }
