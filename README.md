@@ -39,3 +39,29 @@ Aturan bisnisnya ada di [docs/aturan-bisnis.md](docs/aturan-bisnis.md).
 
 - `alert/`: contoh alert monitoring, dipakai latihan agent on call
 - `scripts/kirim-alert.sh` (Git Bash, macOS, Linux) dan `scripts/kirim-alert.ps1` (PowerShell): mengirim alert ke routine
+
+## Untuk peserta workshop
+
+Repo ini adalah **template**. Klik **Use this template** → **Create a new repository**, beri nama `erp-latihan`, lalu pilih **Private**. Yang tersalin cukup branch `main`; branch solusi tetap bisa dilihat di repo ini.
+
+Bandingkan hasil agent kelompokmu dengan branch solusi. Di GitHub, buka **Compare** (`main...nama-branch`) untuk melihat perubahannya saja.
+
+| Branch | Isi |
+|---|---|
+| `main` | Titik awal semua latihan |
+| `solusi/izin` | `.claude/settings.json` dari mini praktik permission (Sesi 1.1) |
+| `solusi/bug-faktur-npe` | Perbaikan bug faktur dari alur on call (Sesi 1.3 Langkah 4), dengan test regresi |
+| `solusi/f0-cari-produk` | F0 · Cari produk berdasarkan nama (contoh mentor, Demo D) |
+| `solusi/f1-export-excel` | F1 · Export customer ke Excel |
+| `solusi/f2-filter-kota` | F2 · Filter customer per kota |
+| `solusi/f3-pelunasan-faktur` | F3 · Pelunasan faktur |
+| `solusi/f4-jatuh-tempo` | F4 · Faktur jatuh tempo |
+| `solusi/f5-piutang-customer` | F5 · Piutang customer |
+| `demo-upgrade` | Titik awal Demo C: Spring Boot 3.3 dengan dependency usang |
+| `solusi/demo-upgrade` | Hasil akhir Demo C: Spring Boot 3.5, plus `docs/laporan-upgrade.md` |
+
+Setiap branch solusi lulus `mvn -q test`. Solusi ini hanya salah satu cara. Hasil agent kelompokmu boleh berbeda, asal acceptance criteria di PRD terpenuhi dan test-nya lulus.
+
+## Catatan keamanan
+
+Repo ini sengaja memuat beberapa contoh berbahaya untuk latihan keamanan agent. Semua nilainya dummy, dan host-nya memakai domain `.invalid` yang tidak bisa dihubungi. Jangan meniru pola ini di project sungguhan: di project sungguhan, `.env` wajib masuk `.gitignore`, dan skrip dari sumber yang tidak dikenal jangan dijalankan.
